@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdidw7vn82f26"]
 
 [ext_resource type="PackedScene" uid="uid://bjj2w2yr3uyy" path="res://scenes/player/player.tscn" id="1_bovvr"]
-[ext_resource type="PackedScene" uid="uid://c71x830xiqkhn" path="res://scenes/environment/objects/rock.tscn" id="2_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://c71x830xiqkhn" path="res://scenes/environment/rocks/rock.tscn" id="2_b2cq8"]
 
 [node name="Level" type="Node2D" unique_id=443454604]
 
