@@ -6,6 +6,7 @@ const SPEED = 100.0
 var is_mining: bool = false
 var hitbox_offset: Vector2
 var last_direction: Vector2 = Vector2.RIGHT
+var detected_rocks: Array = []
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
@@ -16,6 +17,7 @@ func _ready() -> void:
 	hitbox_offset = hitbox.position # Initialize hitbox offset
 
 	animated_sprite_2d.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
+	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 
 func _physics_process(_delta: float) -> void:
@@ -47,6 +49,9 @@ func process_movement() -> void:
 
 
 func process_animation() -> void:
+	# Disable hitbox until player swings pickaxe
+	hitbox.monitoring = false
+
 	if velocity != Vector2.ZERO:
 		play_animation("run", last_direction)
 	else:
@@ -89,10 +94,32 @@ func update_hitbox_position() -> void:
 # Mining
 # - - - - - - - - - - - - - - - - - - - - - 
 func use_pickaxe() -> void:
+	detected_rocks.clear()
 	is_mining = true
+	hitbox.monitoring = true
 	play_animation("swing_pickaxe", last_direction)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_mining:
 		is_mining = false
+		if detected_rocks.size() > 0:
+			var rock_to_hit: Rock = get_most_overlapping_rock()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body is Rock:
+		detected_rocks.append(body)
+
+
+func get_most_overlapping_rock() -> Rock:
+	var best_rock: Variant = detected_rocks[0]
+	var best_dist: float = hitbox.global_position.distance_to(best_rock.global_position)
+
+	for rock in detected_rocks:
+		var dist: float = hitbox.global_position.distance_to(best_rock.global_position)
+		if dist < best_dist:
+			best_dist = dist
+			best_rock = rock
+
+	return best_rock
