@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://caf4ktxg4mv6r" path="res://assets/images/player/player.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://c2y15a34toiw0" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="AudioStream" uid="uid://blqlsgju4ks0j" path="res://assets/audio/pickaxe_hit.ogg" id="2_lvxji"]
 [ext_resource type="Texture2D" uid="uid://bpclyvdqhtn4" path="res://assets/images/player/player_actions.png" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
@@ -355,6 +356,10 @@ size = Vector2(8, 5)
 [node name="Player" type="CharacterBody2D" unique_id=458552313]
 motion_mode = 1
 script = ExtResource("1_dovo2")
+
+[node name="PickaxeHitSound" type="AudioStreamPlayer2D" parent="." unique_id=415915868]
+stream = ExtResource("2_lvxji")
+volume_db = -10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084500797]
 sprite_frames = SubResource("SpriteFrames_qek5x")

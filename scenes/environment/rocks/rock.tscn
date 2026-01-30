@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2f3fkxsshx3m" path="res://scripts/environment/rocks/rock.gd" id="1_8w0n3"]
 [ext_resource type="Texture2D" uid="uid://b4w8c2fxjcpxs" path="res://assets/images/ores/stone.png" id="1_n40kn"]
 [ext_resource type="Resource" uid="uid://dgp3ftppuqtj2" path="res://resources/data/rocks/iron.tres" id="2_5vhqh"]
+[ext_resource type="AudioStream" uid="uid://cap8htpj7cnut" path="res://assets/audio/rock_breaking.wav" id="3_elvof"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vp1vt"]
 atlas = ExtResource("1_n40kn")
@@ -14,6 +15,11 @@ radius = 7.0
 [node name="Rock" type="StaticBody2D" unique_id=1071991329]
 script = ExtResource("1_8w0n3")
 data = ExtResource("2_5vhqh")
+
+[node name="RockBreakingSound" type="AudioStreamPlayer2D" parent="." unique_id=175517077]
+stream = ExtResource("3_elvof")
+volume_db = -5.0
+pitch_scale = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581695147]
 texture = SubResource("AtlasTexture_vp1vt")
