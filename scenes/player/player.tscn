@@ -372,3 +372,7 @@ position = Vector2(10, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=12488593]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_gmlin")
+
+[node name="MiningTimer" type="Timer" parent="." unique_id=634482915]
+wait_time = 0.5
+one_shot = true

@@ -8,5 +8,11 @@
 [node name="Rock" parent="." unique_id=1071991329 instance=ExtResource("2_b2cq8")]
 position = Vector2(240, 107)
 
+[node name="Rock2" parent="." unique_id=1436895140 instance=ExtResource("2_b2cq8")]
+position = Vector2(240, 91)
+
+[node name="Rock3" parent="." unique_id=407002805 instance=ExtResource("2_b2cq8")]
+position = Vector2(240, 124)
+
 [node name="Player" parent="." unique_id=458552313 instance=ExtResource("1_bovvr")]
 position = Vector2(328, 108)
