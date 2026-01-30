@@ -2,17 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://bjj2w2yr3uyy" path="res://scenes/player/player.tscn" id="1_bovvr"]
 [ext_resource type="PackedScene" uid="uid://c71x830xiqkhn" path="res://scenes/environment/rocks/rock.tscn" id="2_b2cq8"]
+[ext_resource type="Resource" uid="uid://e6roldx34ddp" path="res://resources/data/rocks/stone.tres" id="2_xb4v1"]
 
 [node name="Level" type="Node2D" unique_id=443454604]
 
-[node name="Rock" parent="." unique_id=1071991329 instance=ExtResource("2_b2cq8")]
+[node name="RockContainer" type="Node2D" parent="." unique_id=1187343297]
+
+[node name="Rock" parent="RockContainer" unique_id=1071991329 instance=ExtResource("2_b2cq8")]
 position = Vector2(240, 107)
 
-[node name="Rock2" parent="." unique_id=1436895140 instance=ExtResource("2_b2cq8")]
+[node name="Rock2" parent="RockContainer" unique_id=1436895140 instance=ExtResource("2_b2cq8")]
 position = Vector2(240, 91)
 
-[node name="Rock3" parent="." unique_id=407002805 instance=ExtResource("2_b2cq8")]
+[node name="Rock3" parent="RockContainer" unique_id=407002805 instance=ExtResource("2_b2cq8")]
 position = Vector2(240, 124)
+data = ExtResource("2_xb4v1")
+
+[node name="OreContainer" type="Node2D" parent="." unique_id=52849820]
 
 [node name="Player" parent="." unique_id=458552313 instance=ExtResource("1_bovvr")]
 position = Vector2(328, 108)

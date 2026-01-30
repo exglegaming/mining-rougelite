@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 
@@ -127,3 +128,8 @@ func get_most_overlapping_rock() -> Rock:
 			best_rock = rock
 
 	return best_rock
+
+
+func add_ore(data: OreData) -> bool:
+	print(data)
+	return true

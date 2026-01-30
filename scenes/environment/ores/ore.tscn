@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dvuahlhdvex0f"]
+
+[ext_resource type="Script" uid="uid://uwv68feem8sw" path="res://scripts/environment/ores/ore.gd" id="1_4aqst"]
+[ext_resource type="Texture2D" uid="uid://b4w8c2fxjcpxs" path="res://assets/images/ores/stone.png" id="1_xtovy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykyhr"]
+atlas = ExtResource("1_xtovy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtovy"]
+radius = 5.0
+
+[node name="Ore" type="Area2D" unique_id=1772555555]
+script = ExtResource("1_4aqst")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1240649653]
+texture = SubResource("AtlasTexture_ykyhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792033363]
+visible = false
+shape = SubResource("CircleShape2D_xtovy")

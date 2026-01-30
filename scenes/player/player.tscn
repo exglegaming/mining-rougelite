@@ -363,6 +363,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1745179849]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_8afob")
 
@@ -370,6 +371,7 @@ shape = SubResource("RectangleShape2D_8afob")
 position = Vector2(10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=12488593]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_gmlin")
 

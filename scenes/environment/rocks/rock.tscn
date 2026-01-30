@@ -19,4 +19,5 @@ data = ExtResource("2_5vhqh")
 texture = SubResource("AtlasTexture_vp1vt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948516512]
+visible = false
 shape = SubResource("CircleShape2D_u5600")
