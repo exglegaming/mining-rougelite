@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="OreData" format=3 uid="uid://ddl3fe5fr7jlk"]
+
+[ext_resource type="Script" uid="uid://lymvlarycayo" path="res://scripts/resources/data/ores/ore_data.gd" id="1_e15yu"]
+[ext_resource type="Texture2D" uid="uid://cqduaoi6vstg8" path="res://assets/images/ores/iron.png" id="2_3na1l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p2qh"]
+atlas = ExtResource("2_3na1l")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_e15yu")
+name = "iron_ore"
+texture = SubResource("AtlasTexture_3p2qh")
+value = 20
+metadata/_custom_type_script = "uid://lymvlarycayo"

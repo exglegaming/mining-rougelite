@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="RockData" format=3 uid="uid://e6roldx34ddp"]
 
 [ext_resource type="Script" uid="uid://whe6y3v4j28e" path="res://scripts/resources/data/rocks/rock_data.gd" id="1_1a5nj"]
+[ext_resource type="Resource" uid="uid://d4hhcp43a2f0t" path="res://resources/data/ores/stone_ore.tres" id="1_5giyn"]
 [ext_resource type="Texture2D" uid="uid://b4w8c2fxjcpxs" path="res://assets/images/ores/stone.png" id="2_5giyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pjld"]
@@ -13,4 +14,5 @@ texture = SubResource("AtlasTexture_5pjld")
 max_health = 3
 rarity = 50
 min_depth = 1
+ore_resource = ExtResource("1_5giyn")
 metadata/_custom_type_script = "uid://whe6y3v4j28e"

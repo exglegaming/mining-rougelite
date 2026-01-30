@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="RockData" format=3 uid="uid://dgp3ftppuqtj2"]
 
+[ext_resource type="Resource" uid="uid://ddl3fe5fr7jlk" path="res://resources/data/ores/iron_ore.tres" id="1_cgpsp"]
 [ext_resource type="Script" uid="uid://whe6y3v4j28e" path="res://scripts/resources/data/rocks/rock_data.gd" id="1_gh0uo"]
 [ext_resource type="Texture2D" uid="uid://cqduaoi6vstg8" path="res://assets/images/ores/iron.png" id="2_6up7g"]
 
@@ -13,4 +14,5 @@ texture = SubResource("AtlasTexture_cgpsp")
 max_health = 4
 rarity = 25
 min_depth = 3
+ore_resource = ExtResource("1_cgpsp")
 metadata/_custom_type_script = "uid://whe6y3v4j28e"
