@@ -24,6 +24,10 @@ func _ready() -> void:
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 
+func reset(pos: Vector2) -> void:
+	position = pos
+
+
 func _physics_process(_delta: float) -> void:
 	# Handle mining input
 	if Input.is_action_pressed("use_pickaxe") and mining_timer.is_stopped():
