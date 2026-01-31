@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cdidw7vn82f26"]
 
 [ext_resource type="PackedScene" uid="uid://bjj2w2yr3uyy" path="res://scenes/player/player.tscn" id="1_bovvr"]
+[ext_resource type="PackedScene" uid="uid://p6heen7ubb7u" path="res://scenes/levels/map_one.tscn" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://c71x830xiqkhn" path="res://scenes/environment/rocks/rock.tscn" id="2_b2cq8"]
 [ext_resource type="Resource" uid="uid://e6roldx34ddp" path="res://resources/data/rocks/stone.tres" id="2_xb4v1"]
 
 [node name="Level" type="Node2D" unique_id=443454604]
+
+[node name="Map" parent="." unique_id=47884944 instance=ExtResource("1_xb4v1")]
 
 [node name="RockContainer" type="Node2D" parent="." unique_id=1187343297]
 

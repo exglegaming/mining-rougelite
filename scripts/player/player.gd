@@ -38,6 +38,7 @@ func _physics_process(_delta: float) -> void:
 	process_animation()
 	move_and_slide()
 
+
 # - - - - - - - - - - - - - - - - - - - - - 
 # Movement and Animations
 # - - - - - - - - - - - - - - - - - - - - - 

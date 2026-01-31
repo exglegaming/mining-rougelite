@@ -361,6 +361,8 @@ script = ExtResource("1_dovo2")
 stream = ExtResource("2_lvxji")
 volume_db = -10.0
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=324330845]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084500797]
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"swing_pickaxe_right"
