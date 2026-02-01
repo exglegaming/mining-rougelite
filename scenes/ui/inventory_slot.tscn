@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d2m5edvbek8mb"]
+
+[ext_resource type="Texture2D" uid="uid://eu5jw6bina4" path="res://assets/images/tileset/Ground - deco 5.png" id="1_ru537"]
+[ext_resource type="Texture2D" uid="uid://cqduaoi6vstg8" path="res://assets/images/ores/iron.png" id="2_r4ab7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bngwc"]
+atlas = ExtResource("1_ru537")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uda2d"]
+atlas = ExtResource("2_r4ab7")
+region = Rect2(2, 4, 12, 9)
+
+[node name="InventorySlot" type="TextureRect" unique_id=842734671]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_bngwc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2038522855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer" unique_id=86551502]
+layout_mode = 2
+texture = SubResource("AtlasTexture_uda2d")
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=995034480]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -9.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "x0"

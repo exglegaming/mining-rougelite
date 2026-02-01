@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boxoxjys17ggx"]
 
 [ext_resource type="Script" uid="uid://3ev5yf772wo6" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="PackedScene" uid="uid://b1rh1u14wu30f" path="res://scenes/ui/inventory_ui.tscn" id="2_hqnrr"]
 
 [node name="HUD" type="CanvasLayer" unique_id=138545003]
 script = ExtResource("1_0mwgc")
@@ -31,3 +32,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Depth: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InventoryUI" parent="." unique_id=756831527 instance=ExtResource("2_hqnrr")]
