@@ -357,6 +357,10 @@ size = Vector2(8, 5)
 motion_mode = 1
 script = ExtResource("1_dovo2")
 
+[node name="MiningTimer" type="Timer" parent="." unique_id=634482915]
+wait_time = 0.5
+one_shot = true
+
 [node name="PickaxeHitSound" type="AudioStreamPlayer2D" parent="." unique_id=415915868]
 stream = ExtResource("2_lvxji")
 volume_db = -10.0
@@ -381,7 +385,3 @@ position = Vector2(10, 0)
 visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_gmlin")
-
-[node name="MiningTimer" type="Timer" parent="." unique_id=634482915]
-wait_time = 0.5
-one_shot = true
