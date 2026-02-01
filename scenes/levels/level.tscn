@@ -3,9 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bjj2w2yr3uyy" path="res://scenes/player/player.tscn" id="1_bovvr"]
 [ext_resource type="Script" uid="uid://djqtr1jv1vxgl" path="res://scripts/levels/level.gd" id="1_urvlt"]
 [ext_resource type="PackedScene" uid="uid://p6heen7ubb7u" path="res://scenes/levels/map_one.tscn" id="1_xb4v1"]
+[ext_resource type="Script" uid="uid://whe6y3v4j28e" path="res://scripts/resources/data/rocks/rock_data.gd" id="2_icy5c"]
+[ext_resource type="Resource" uid="uid://e6roldx34ddp" path="res://resources/data/rocks/stone.tres" id="2_xb4v1"]
+[ext_resource type="Resource" uid="uid://dp177gjh8iwak" path="res://resources/data/rocks/amethyst.tres" id="3_rmjfq"]
+[ext_resource type="Resource" uid="uid://bisfn2mwnmfrk" path="res://resources/data/rocks/diamond.tres" id="4_7pb6i"]
+[ext_resource type="Resource" uid="uid://6g5a0sutywl3" path="res://resources/data/rocks/gold.tres" id="5_xfk5q"]
+[ext_resource type="Resource" uid="uid://dgp3ftppuqtj2" path="res://resources/data/rocks/iron.tres" id="6_qogh7"]
 
 [node name="Level" type="Node2D" unique_id=443454604]
 script = ExtResource("1_urvlt")
+rock_types = Array[ExtResource("2_icy5c")]([ExtResource("2_xb4v1"), ExtResource("6_qogh7"), ExtResource("3_rmjfq"), ExtResource("5_xfk5q"), ExtResource("4_7pb6i")])
 
 [node name="Map" parent="." unique_id=47884944 instance=ExtResource("1_xb4v1")]
 

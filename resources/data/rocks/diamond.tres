@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RockData" format=3 uid="uid://bisfn2mwnmfrk"]
+
+[ext_resource type="Resource" uid="uid://kivllkycgk5q" path="res://resources/data/ores/diamond_ore.tres" id="1_mh1y3"]
+[ext_resource type="Script" uid="uid://whe6y3v4j28e" path="res://scripts/resources/data/rocks/rock_data.gd" id="2_7bdce"]
+[ext_resource type="Texture2D" uid="uid://owwci7t7ya7j" path="res://assets/images/gems/diamond.png" id="3_mh1y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pjld"]
+atlas = ExtResource("3_mh1y3")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_7bdce")
+texture = SubResource("AtlasTexture_5pjld")
+max_health = 10
+rarity = 1
+min_depth = 8
+ore_resource = ExtResource("1_mh1y3")
+metadata/_custom_type_script = "uid://whe6y3v4j28e"
