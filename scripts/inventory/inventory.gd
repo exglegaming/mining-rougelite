@@ -2,6 +2,8 @@ class_name Inventory
 extends RefCounted
 
 
+signal inventory_changed
+
 var slots: Array[InventorySlot] = []
 var max_slots: int
 
@@ -17,14 +19,14 @@ func add_item(data: OreData) -> bool:
     for slot: InventorySlot in slots:
         if slot != null && slot.can_stack(data):
             slot.add_ore()
-            print("Slot name: %s\nSlot quantity: %d" % [slot.ore_data.name, slot.quantity])
+            inventory_changed.emit()
             return true
 
     # Find empty slot
     for i: int in range(slots.size()):
         if slots[i] == null:
             slots[i] = InventorySlot.new(data, 1)
-            print(slots)
+            inventory_changed.emit()
             return true
     
     # No space
