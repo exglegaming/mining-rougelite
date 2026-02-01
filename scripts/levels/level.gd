@@ -5,21 +5,67 @@ const FILL_PERCENTAGE: float = 0.4
 const LADDER_CHANCE: float = 0.2
 const ROCK_SCENE: PackedScene = preload("uid://c71x830xiqkhn")
 const LADDER_SCENE: PackedScene = preload("uid://d4aer8gboafqq")
+const MAPS: Array[PackedScene] = [
+    preload("uid://p6heen7ubb7u"),
+    preload("uid://2mwwbmb8i16g"),
+    preload("uid://dvi1ngg2nodik")
+]
 
 @export var rock_types: Array[RockData]
 
+var last_map_index: int
 var current_depth: int = 1
 var down_ladder: Ladder
 var rocks_remaining: int = 0
 
 @onready var rock_container: Node2D = $RockContainer
+@onready var ore_container: Node2D = $OreContainer
 @onready var current_map: Node2D = $Map
 @onready var player: Player = $Player
 
 
 func _ready() -> void:
+    setup_map()
+
+
+func setup_map() -> void:
+    _clear_map()
+    _generate_map()
     _generate_rocks()
     _position_object()
+
+
+func _clear_map() -> void:
+    # Remove old map
+    if current_map:
+        current_map.queue_free()
+        current_map = null
+    
+    # Delete any down ladders
+    if down_ladder:
+        down_ladder.queue_free()
+        down_ladder = null
+    
+    # Clear existing rocks
+    for child in rock_container.get_children():
+        child.queue_free()
+    
+    # Delete any ores not collected
+    for ore: Node in ore_container.get_children():
+        ore.queue_free()
+
+
+func _generate_map() -> void:
+    # Pick a random map
+    var new_index: int = randi_range(0, MAPS.size() - 1)
+
+    # Keep picking until we get a different one
+    while new_index == last_map_index:
+        new_index = randi_range(0, MAPS.size() - 1)
+    last_map_index = new_index
+
+    current_map = MAPS[new_index].instantiate()
+    self.add_child(current_map)
 
 
 func _position_object() -> void:
@@ -27,11 +73,7 @@ func _position_object() -> void:
     player.reset(player_spawn.position)
 
 
-func _generate_rocks() -> void:
-    # Clear existing rocks
-    for child in rock_container.get_children():
-        child.queue_free()
-    
+func _generate_rocks() -> void:   
     # Get tilemap layers from current map
     var ground_layer: TileMapLayer = current_map.get_node("Ground")
     var props_layer: TileMapLayer = current_map.get_node("Props")
@@ -108,4 +150,5 @@ func _create_down_ladder(pos: Vector2) -> void:
 
 
 func _on_down_ladder_used() -> void:
-    print("Move to next level")
+    current_depth += 1
+    setup_map()

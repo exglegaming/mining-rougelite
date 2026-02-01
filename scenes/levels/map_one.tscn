@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bxaees5n833p0" path="res://scenes/levels/base_map.tscn" id="1_ro0gu"]
 
 [node name="Map" unique_id=47884944 instance=ExtResource("1_ro0gu")]
+
+[node name="PlayerSpawn" parent="." index="2" unique_id=1443898214]
+metadata/_edit_lock_ = true
