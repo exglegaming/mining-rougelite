@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mining Rougelite"
-run/main_scene="uid://cdidw7vn82f26"
+run/main_scene="uid://b33iqqh2npfw8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -31,6 +31,10 @@ folder_colors={
 "res://scenes/": "blue",
 "res://scripts/": "orange"
 }
+
+[gui]
+
+theme/custom_font="uid://pcwb10u400a7"
 
 [input]
 

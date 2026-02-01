@@ -1,8 +1,11 @@
+class_name Level
 extends Node2D
 
 
+signal change_depth(depth: int)
+
 const FILL_PERCENTAGE: float = 0.4
-const LADDER_CHANCE: float = 0.2
+const LADDER_CHANCE: float = 1.0 # If not set to 0.2 change back when game is complete
 const ROCK_SCENE: PackedScene = preload("uid://c71x830xiqkhn")
 const LADDER_SCENE: PackedScene = preload("uid://d4aer8gboafqq")
 const MAPS: Array[PackedScene] = [
@@ -151,4 +154,5 @@ func _create_down_ladder(pos: Vector2) -> void:
 
 func _on_down_ladder_used() -> void:
     current_depth += 1
+    change_depth.emit(current_depth)
     setup_map()
