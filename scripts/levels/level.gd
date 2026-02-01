@@ -3,6 +3,7 @@ extends Node2D
 
 
 signal change_depth(depth: int)
+signal exit_mine
 
 const FILL_PERCENTAGE: float = 0.4
 const LADDER_CHANCE: float = 1.0 # If not set to 0.2 change back when game is complete
@@ -25,10 +26,13 @@ var rocks_remaining: int = 0
 @onready var ore_container: Node2D = $OreContainer
 @onready var current_map: Node2D = $Map
 @onready var player: Player = $Player
+@onready var exit_ladder: ExitLadder = $ExitLadder
 
 
 func _ready() -> void:
 	setup_map()
+
+	exit_ladder.ladder_used.connect(_on_exit_ladder_ladder_used)
 
 
 func setup_map() -> void:
@@ -74,6 +78,9 @@ func _generate_map() -> void:
 func _position_object() -> void:
 	var player_spawn: Marker2D = current_map.get_node("PlayerSpawn")
 	player.reset(player_spawn.position)
+
+	# Position exit ladder slightly above the starting marker
+	exit_ladder.position = player_spawn.position + Vector2(0, -16)
 
 
 func _generate_rocks() -> void:   
@@ -156,3 +163,9 @@ func _on_down_ladder_used() -> void:
 	current_depth += 1
 	change_depth.emit(current_depth)
 	setup_map()
+
+
+func _on_exit_ladder_ladder_used() -> void:
+	if !player.can_move: return # If player is already using ladder then skip this logic
+	player.can_move = false
+	exit_mine.emit()

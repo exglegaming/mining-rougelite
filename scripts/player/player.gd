@@ -9,8 +9,8 @@ var hitbox_offset: Vector2
 var last_direction: Vector2 = Vector2.RIGHT
 var detected_rocks: Array = []
 var pickaxe_strength: int = 1
-
 var inventory: Inventory
+var can_move: bool = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
@@ -32,6 +32,8 @@ func reset(pos: Vector2) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if !can_move: return
+	
 	# Handle mining input
 	if Input.is_action_pressed("use_pickaxe") and mining_timer.is_stopped():
 		use_pickaxe()

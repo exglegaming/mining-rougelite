@@ -9,8 +9,10 @@
 [ext_resource type="Resource" uid="uid://bisfn2mwnmfrk" path="res://resources/data/rocks/diamond.tres" id="4_7pb6i"]
 [ext_resource type="Resource" uid="uid://6g5a0sutywl3" path="res://resources/data/rocks/gold.tres" id="5_xfk5q"]
 [ext_resource type="Resource" uid="uid://dgp3ftppuqtj2" path="res://resources/data/rocks/iron.tres" id="6_qogh7"]
+[ext_resource type="PackedScene" uid="uid://by20dgm3fpfwk" path="res://scenes/environment/props/exit_ladder.tscn" id="10_rmjfq"]
 
 [node name="Level" type="Node2D" unique_id=443454604]
+y_sort_enabled = true
 script = ExtResource("1_urvlt")
 rock_types = Array[ExtResource("2_icy5c")]([ExtResource("2_xb4v1"), ExtResource("6_qogh7"), ExtResource("3_rmjfq"), ExtResource("5_xfk5q"), ExtResource("4_7pb6i")])
 
@@ -22,3 +24,6 @@ rock_types = Array[ExtResource("2_icy5c")]([ExtResource("2_xb4v1"), ExtResource(
 
 [node name="Player" parent="." unique_id=458552313 instance=ExtResource("1_bovvr")]
 position = Vector2(-56, 73)
+
+[node name="ExitLadder" parent="." unique_id=510863409 instance=ExtResource("10_rmjfq")]
+position = Vector2(72, 72)

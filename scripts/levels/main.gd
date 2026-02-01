@@ -6,9 +6,14 @@ extends Node2D
 
 
 func _ready() -> void:
-    # if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-    #     Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	# if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+	#     Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
-    hud.set_inventory(level.player.inventory)
+	hud.set_inventory(level.player.inventory)
 
-    level.change_depth.connect(hud.update_depth)
+	level.change_depth.connect(hud.update_depth)
+	level.exit_mine.connect(_on_level_exit_mine)
+
+
+func _on_level_exit_mine() -> void:
+	print("Exited mines!")
