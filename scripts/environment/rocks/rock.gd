@@ -1,6 +1,9 @@
 class_name Rock
 extends StaticBody2D
 
+
+signal broken(pos: Vector2)
+
 const ORE_SCENE: PackedScene = preload("uid://dvuahlhdvex0f")
 const FLASH_COLOR: Color = Color(2.454, 2.454, 2.454)
 
@@ -44,6 +47,8 @@ func _destroy() -> void:
 
 
 func _drop_ore() -> void:
+    broken.emit(position)
+
     var ore: Ore = ORE_SCENE.instantiate()
     ore.position = position
     ore.ore_data = data.ore_resource
